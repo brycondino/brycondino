@@ -8,6 +8,11 @@
 
 I build reliable backend systems, optimize high-volume databases, and create reporting-ready data workflows using Oracle, SQL/PLSQL, Python, Unix Shell, Perl, and AWS.
 
+## 🔗 Live Portfolio Links
+
+### [🌐 Open My Portfolio Website](https://brycondino.github.io/brycondino/)
+### [📊 View Sample Reports & Dashboards](https://brycondino.github.io/brycondino/reports.html)
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-Reporting%20Dashboard%20Showcase-47d7ff?style=for-the-badge&logo=githubpages)](https://brycondino.github.io/brycondino/)
 [![Sample Reports](https://img.shields.io/badge/Sample%20Reports-Transportation%20and%20POS-50ffb1?style=for-the-badge)](https://brycondino.github.io/brycondino/reports.html)
 [![GitHub](https://img.shields.io/badge/GitHub-brycondino-181717?style=for-the-badge&logo=github)](https://github.com/brycondino)
@@ -21,7 +26,7 @@ I build reliable backend systems, optimize high-volume databases, and create rep
 
 ## 🌐 Portfolio Website
 
-Portfolio URL after the repository is renamed to `brycondino`:
+Portfolio URL:
 
 `https://brycondino.github.io/brycondino/`
 
