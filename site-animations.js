@@ -108,8 +108,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function setupHeroVisualFixes() {
+    const hero = document.querySelector('#hero .hero-grid');
+    if (!hero) return;
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @media (hover:hover) and (pointer:fine) {
+        html.sci-fi-cursor,html.sci-fi-cursor body,html.sci-fi-cursor a,html.sci-fi-cursor button,html.sci-fi-cursor summary,html.sci-fi-cursor [role="button"]{cursor:auto!important}
+        html.sci-fi-cursor input,html.sci-fi-cursor textarea{cursor:text!important}
+        body>canvas[style*="z-index: 9999"]{display:none!important}
+      }
+      @media (min-width:901px) {
+        #hero .hero-grid{grid-template-columns:minmax(0,.88fr) minmax(500px,1.12fr);gap:clamp(24px,4vw,54px)}
+        #hero .hero-visual{width:min(100%,560px);min-height:430px;display:grid;place-items:center}
+        #hero .portrait-button{width:min(380px,70%)}
+        #hero .floating-result{left:0;right:auto;min-width:150px;max-width:182px;padding:12px 14px}
+        #hero .floating-result strong{font-size:1.05rem;line-height:1.25;white-space:normal}
+        #hero .result-one{top:12%}
+        #hero .result-two{top:40%}
+        #hero .result-three{top:68%;bottom:auto}
+        #hero .theme-hint{right:9%;bottom:1%}
+      }
+      @media (min-width:681px) and (max-width:900px) {
+        #hero{padding-top:112px}
+        #hero .hero-grid{grid-template-columns:minmax(0,.82fr) minmax(390px,1.18fr);gap:18px}
+        #hero .hero-copy{text-align:left}
+        #hero .status-pill,#hero .role-banner,#hero .hero-lead{margin-inline:0}
+        #hero .hero-actions,#hero .hero-proof{justify-content:flex-start}
+        #hero .hero-visual{order:0;width:100%;min-height:360px;margin-bottom:0;display:grid;place-items:center}
+        #hero .portrait-button{width:min(310px,68%)}
+        #hero .floating-result{left:0;right:auto;min-width:126px;max-width:150px;padding:9px 10px}
+        #hero .floating-result strong{font-size:.88rem;line-height:1.2;white-space:normal}
+        #hero .floating-result span{font-size:.5rem}
+        #hero .result-one{top:12%}
+        #hero .result-two{top:40%}
+        #hero .result-three{top:68%;bottom:auto}
+        #hero .theme-hint{right:7%;bottom:0;font-size:.61rem}
+        #hero h1{font-size:clamp(2.55rem,5.7vw,3.5rem)}
+      }
+      @media (max-width:680px) {
+        #hero .hero-visual{min-height:360px;overflow:visible}
+        #hero .portrait-button{width:min(250px,70%)}
+        #hero .floating-result{min-width:104px;max-width:132px;padding:8px 9px}
+        #hero .floating-result strong{font-size:.78rem;line-height:1.2;white-space:normal}
+        #hero .floating-result span{font-size:.47rem}
+        #hero .result-one{top:8%;left:0}
+        #hero .result-two{top:36%;right:0;left:auto}
+        #hero .result-three{top:64%;bottom:auto;left:0}
+        #hero .theme-hint{right:50%;bottom:0;transform:translateX(50%);white-space:nowrap;font-size:.58rem}
+      }
+    `;
+    document.head.appendChild(style);
+    document.documentElement.classList.remove('sci-fi-cursor');
+  }
+
   setupArchitectureFlow();
   setupCaseStudyVisuals();
+  setupHeroVisualFixes();
 
   if (!window.gsap) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
