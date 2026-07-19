@@ -115,6 +115,7 @@ test('about section replaces the repeated portrait with a semantic delivery arch
   const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="results"'));
   assert.doesNotMatch(about, /<img\b/i);
   assert.match(about, /<div[^>]+class="architecture-card reveal"/i);
+  assert.match(about, /class="architecture-card reveal"[^>]+role="group"[^>]+aria-labelledby="architectureTitle"/i);
   assert.match(about, /<ol[^>]+class="architecture-nodes"[^>]+aria-label="Delivery architecture stages"/i);
   assert.match(about, /<svg[^>]+class="architecture-connectors"[^>]+aria-hidden="true"/i);
 
